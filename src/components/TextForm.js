@@ -7,7 +7,7 @@ export default function TextForm(props) {
     const[text, setetxt]=useState("");
     
     // arrow function uppercase
-    const handleUpconvert = () =>{
+    const handleupconvert = () =>{
         let new1 = text.toLocaleUpperCase();
         setetxt(new1);
         props.showAlert("success", "Converted to Uppercase!");
@@ -55,7 +55,7 @@ export default function TextForm(props) {
         <h1> {props.heading}</h1>
         <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='light'? 'white': 'grey', color:props.mode==='light'? 'black': 'white' }} onChange={handleOnchange} id="exampleFormControlTextarea1" rows="8"></textarea>
         <div className='d-flex justify-content-between'>
-            <button className="btn btn-primary my-3" >Covert To UpperCase</button>
+            <button className="btn btn-primary my-3" onClick={ handleupconvert}> Covert To UpperCase</button>
             <button className="btn btn-primary my-3" onClick={handleClconvert}>Clear the Textform</button>
             <button className="btn btn-primary my-3" onClick={handleLoconvert}>Covert To LowerCase</button>
             <button className="btn btn-primary my-3" onClick={handleRvconvert}>Reverse</button>
